@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.display {
+  display: flex;
+  justify-content: center;
+}
+.block {
+  width: 33.3%;
+}
+.btnStyle {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+}
