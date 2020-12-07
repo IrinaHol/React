@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.position{
+  display: flex;
+}
+
+.box {
+  width: 33%;
+  background-color: chartreuse;
+  margin: 3px;
+}
