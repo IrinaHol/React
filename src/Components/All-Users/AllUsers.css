@@ -1,0 +1,113 @@
+.block-all-users{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 40%;
+		height: 40px;
+		border-bottom: 1px solid darkgray;
+		background-color: white;
+
+}
+.users-header {
+		display: flex;
+		justify-content: center;
+		color: white;
+		font-size: 18px;
+		margin-bottom: 10px;
+}
+
+.all-users {
+font-size: 20px;
+
+
+}
+.block-all-users:hover {
+
+		background-color: cornsilk;
+}
+
+.all-btn{
+		display: flex;
+		justify-content: space-between;
+		width: 35%;
+		margin-right: 15px;
+
+}
+.Btn{
+		background-color: dodgerblue;
+		border-radius: 5px;
+		width: 100px;
+		height: 30px;
+		border: none;
+}
+button,
+button:active,
+button:focus {
+		outline: none;
+}
+.Btn:hover{
+		background-color: darkslateblue;
+		color: white;
+		cursor: pointer;
+}
+.btn-post{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: forestgreen;
+		width: 60px;
+		border-radius: 5px;
+}
+.btn-post a{
+		text-decoration: none;
+		color: white;
+		font-size: 15px;
+		font-weight: bold;
+}
+
+.btn-post:hover {
+		background-color: green;
+}
+
+
+*{
+		box-sizing: border-box;
+}
+.chosen-user{
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 110px 200px 0 0;
+		background-color: white;
+		width: 42%;
+		padding-left: 14px;
+		padding-right: 14px;
+
+
+}
+.header-user {
+		height: 70px;
+		border-bottom: 1px solid darkgray;
+}
+.header-user p{
+		height: 13px;
+
+}
+.header-user h2{
+		height: 12px;
+
+}
+.userName {
+		font-size: 15px;
+}
+.contact {
+		padding-left: 20px;
+}
+.phone {
+		border-bottom: 1px solid darkgray;
+
+}
+.text {
+		font-size: 16px;
+
+}
