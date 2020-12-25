@@ -3,12 +3,47 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux'
+
+const initialState = null;
+
+
+const reducer = (state = initialState, action) => {
+		switch (action.type) {
+				case 'SET_TODO_ITEM': {
+						return action.payload
+				}
+				case 'RESET_TODO': {
+						return null;
+				}
+				case 'TOGGLE_TODO_COMPLETED': {
+						return {
+								...state,
+								completed: !state.completed
+						}
+				}
+				case 'CHANGE_TODO_TITLE': {
+						return {
+								...state,
+								title: action.payload
+						}
+				}
+				default: {
+						return state;
+				}
+		}
+}
+
+const store = createStore(reducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+		<React.StrictMode>
+				<Provider store={store}>
+						<App/>
+				</Provider>
+		</React.StrictMode>,
+		document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
