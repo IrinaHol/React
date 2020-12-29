@@ -1,2 +1,2 @@
-export * from './counter-action-types';
-export * from './todos-action-types';
+export * from './product-action-types';
+
