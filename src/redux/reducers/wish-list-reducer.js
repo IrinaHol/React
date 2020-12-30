@@ -10,17 +10,14 @@ const wishListReducer = (state=initialState, action) => {
 		switch (action.type) {
 
 				case TOGGLE_ITEM_IN_WISHLIST: {
-						// const itemInCart = state.cart.find(el => el.id === action.payload.id)
-						// const updatedCart = [...state.cart]
-						// if (!itemInCart) updatedCart.push(action.payload)
-						// return {...state, cart: updatedCart}
-						return {...state, wishList:
-										[...state.wishList, action.payload]
-						}}
 
-				// case REMOVE_FROM_CART: {
-				// 		return{...state, cart: state.cart.find(el=>el.id !== action.payload.id)
-				// 		}}
+						const updatedWishList = state.wishList.filter(el => el.id !== action.payload.id)
+						if (updatedWishList.length === state.wishList.length){
+								updatedWishList.push(action.payload)
+						}
+						return {...state, wishList: updatedWishList}
+				}
+
 
 				default: {
 						return state;

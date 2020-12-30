@@ -1,14 +1,16 @@
 import React, {useEffect}from 'react'
+import {useMemo} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {incCounter, decCounter, resetCounter, fetchTodos} from './redux';
-
+import {setProduct} from './redux';
+import {ProductList} from "./Components/products-list";
+import MenuComponent from "./Components/menu";
 
 export default function App() {
+		const {products} = useSelector(
+				({products:{products}}) => ({products})
 
-		// const todos = useSelector(({todos: {todos}}) => todos);
-		// const counter = useSelector(({counter}) => counter.counter);
-		const storeDate = useSelector(({counter: {counter}, todos:{todos}})=>({counter, todos}))
-
+		);
+		console.log(products)
 		const dispatch = useDispatch();
 		//
 		// const fetchTodos = async()=>{
@@ -24,23 +26,23 @@ export default function App() {
 		// }
 
 		useEffect(()=>{
-				dispatch(fetchTodos())
+				dispatch(setProduct())
 		},[dispatch]);
 
 
-		const handleInc = () => dispatch(incCounter());
-		const handleDec = () => dispatch(decCounter());
-		const handleRec = () => dispatch(resetCounter())
+	const totalPrice = useMemo(()=>{
+				return products.reduce((acc, value)=>acc + value.price, 0)
+
+		})
+		console.log(totalPrice)
 
 
 		return (
 				<div>
-						<h2>COUNTER: {storeDate.counter}</h2>
-						<button onClick={handleInc}>inc</button>
-						<button onClick={handleDec}>dec</button>
-						<button onClick={handleRec}>reset</button>
-						{storeDate.todos.map((value) =>
-								(<h2>{value.id}-{value.title} </h2>))}
+
+						<MenuComponent totalPrice={totalPrice}/>
+					<ProductList products={products}/>
+
 				</div>
 
 )

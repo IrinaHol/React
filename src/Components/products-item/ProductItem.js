@@ -3,12 +3,13 @@ import {Card, Image, Button} from 'semantic-ui-react'
 import './ProductItem.css'
 
 export const ProductItem = (
-		{AddToCart, AddToWishList, value,
-				value: {id, image, title, price}}) => {
+		{isAddedToWishlist, AddToCart, AddToWishList, product,
+				product: {id, image, title, price}}) => {
 
 
 		return (
-				<Card key={id}>
+<div className='style-cart'>
+				<Card key={id} className='item' >
 						<Image src={image} wrapped ui={false}/>
 						<Card.Content>
 								<Card.Header>{title}</Card.Header>
@@ -21,11 +22,13 @@ export const ProductItem = (
 						</h3>
 						<div className='btn'>
 								<div className='color'>
-										<Button onClick={()=>AddToCart(value)}>Додати в кошик</Button> </div>
-								<Button onClick={()=>AddToWishList(value)}>Add to WishList</Button>
+										<Button onClick={()=>AddToCart(product)}>Додати в кошик</Button> </div>
+								<Button onClick={()=>AddToWishList(product)}>Add to WishList</Button>
 						</div>
 
 				</Card>
+
+</div>
 
 		);
 }

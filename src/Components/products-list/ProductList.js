@@ -1,6 +1,7 @@
 import React from 'react';
 import {ProductItem} from "../products-item";
 import {Card} from 'semantic-ui-react'
+import './ProductList.css'
 
 import {useDispatch, useSelector} from "react-redux";
 import { toggleItemInCart, toggleItemInWishList } from "../../redux";
@@ -8,24 +9,39 @@ import { toggleItemInCart, toggleItemInWishList } from "../../redux";
 
 export const ProductList = ({products}) => {
 		const dispatch = useDispatch();
-		const AddToCart = (value) => {
-				dispatch(toggleItemInCart(value))
+
+
+
+
+		// const cart = useSelector(({ cart: { cart } }) => cart);
+		const AddToCart = (product) => {
+				dispatch(toggleItemInCart(product))
 		}
-		const AddToWishList = (value) => {
-				dispatch(toggleItemInWishList(value))
+		const AddToWishList = (product) => {
+				dispatch(toggleItemInWishList(product))
 		}
 
 		return (
 				<div>
-						<Card.Group itemsPerRow={4}>
-								{products.map((value) => (
-										<ProductItem AddToCart={AddToCart}
-																 AddToWishList={AddToWishList} value={value} key={value.id}/>
+						<section className='cart-block'>
 
-								))}</Card.Group>
+							 {products.map((product) => (
+										<ProductItem
+												// isAddedToWishlist={!!cart.find(({ id }) => id === product.id)}
+												AddToCart={AddToCart}
+												AddToWishList={AddToWishList}
+												key={product.id}
+												product={product}
+										/>
+								))}
+
+
+						</section>
+
+
 				</div>
 
-				// <Button onClick={addProductToCart}>Додати в кошик</Button>
+
 
 		);
 }
