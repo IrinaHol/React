@@ -34,11 +34,7 @@ const deleteUsers = (e)=>{
 								<button>Add user</button>
 
 						</form>
-						{/*<form onClick={deleteUsers}>*/}
-
-						{/*</form>*/}
 						<form onSubmit={deleteUsers}>
-								<input/>
 								<button>Delete</button>
 							</form>
 
@@ -46,7 +42,6 @@ const deleteUsers = (e)=>{
 								<div>{user.map((user) =>
 										<p key={user.id}> name: {user.name} <hr/> age: {user.age}</p>
 								)}
-
 										<form onSubmit={deleteUsers}>
 												<button>Delete</button>
 										</form>
