@@ -17,6 +17,14 @@ const cartReducer = (state=initialState, action) => {
 
 								return {...state, cart: updatedCart}
 				}
+				// case 'PRICE': {
+				// 		const updatedCart = state.cart.filter(el => el.id !== action.payload.id)
+				// 		if (updatedCart.length === state.cart.length){
+				// 				updatedCart.push(action.payload)
+				// 		}
+				//
+				// 		return {...state, cart: updatedCart}
+				// }
 
 
 				// case REMOVE_FROM_CART: {

@@ -29,3 +29,8 @@ export const toggleItemInWishList = (product) => ({
 		payload: product
 });
 
+// export const totalPrice = (totalPrice)=>({
+// 		type: 'PRICE',
+// 		payload: totalPrice
+// });
+
